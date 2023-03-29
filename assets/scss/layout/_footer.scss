@@ -1,0 +1,50 @@
+
+.footer {
+    background-color: #EEE9CC;
+    color: #111;
+    padding-top: 60px;
+    .group-footer{
+        margin-left: 20px;
+        margin-right: 20px;
+        .flex-wrap{
+            display: flex;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #111;
+            .headline-sm {
+                font-size: 26px;
+                margin-bottom: 20px;
+            }
+            .contact{
+                width: 25%;
+                a{
+                    display: block;
+                }
+            }
+            .credit{
+                width: 50%;
+                a {
+                    display: inline-block;
+                    width: 200px;
+                }
+            }
+            .name{
+                position: relative;
+                width: 25%;
+                .headline-sm {
+                    .des {
+                        position: absolute;
+                        top: 0;
+                    }
+                    .becots {
+                        position: absolute;
+                        top: 0;
+                        left: 60px;
+                    }
+                }
+            }
+        }
+        .address {
+            padding: 15px 0;
+        }
+    }
+}

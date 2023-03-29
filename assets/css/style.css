@@ -1,0 +1,599 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url(../fonts/PPNeueMontreal-Regular.woff2) format("woff2");
+  font-weight: 400;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+:root {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+       text-size-adjust: 100%;
+  cursor: default;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+     tab-size: 4;
+}
+
+html, body {
+  height: 100%;
+  line-height: 1;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+fieldset {
+  border: 0;
+}
+
+/* body 기초세팅 */
+body {
+  font-family: "PP Neue Montreal", sans-serif;
+  color: #EEE9CC;
+  background-color: #EEE9CC;
+  font-size: 16px;
+  font-weight: 400;
+  min-width: 320px;
+  line-height: 1.5;
+  height: 100%;
+  overflow-x: hidden;
+  min-width: 320px;
+}
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.header {
+  background: #1E1915;
+  border-bottom: 1px solid #EEE9CC;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 300;
+  transition: 0.3s;
+}
+.header .group-header {
+  display: flex;
+  height: 70px;
+  align-items: center;
+}
+.header .group-header .logo {
+  padding-left: 20px;
+  width: 50%;
+  font-size: 30px;
+}
+.header .group-header .gnb {
+  width: 50%;
+}
+.header .group-header .gnb .menu-list {
+  display: flex;
+}
+.header .group-header .gnb .menu-list .menu-item {
+  width: 33%;
+  text-transform: uppercase;
+}
+.header.fix {
+  visibility: visible;
+  opacity: 1;
+  z-index: 300;
+}
+
+.footer {
+  background-color: #EEE9CC;
+  color: #111;
+  padding-top: 60px;
+}
+.footer .group-footer {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.footer .group-footer .flex-wrap {
+  display: flex;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #111;
+}
+.footer .group-footer .flex-wrap .headline-sm {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+.footer .group-footer .flex-wrap .contact {
+  width: 25%;
+}
+.footer .group-footer .flex-wrap .contact a {
+  display: block;
+}
+.footer .group-footer .flex-wrap .credit {
+  width: 50%;
+}
+.footer .group-footer .flex-wrap .credit a {
+  display: inline-block;
+  width: 200px;
+}
+.footer .group-footer .flex-wrap .name {
+  position: relative;
+  width: 25%;
+}
+.footer .group-footer .flex-wrap .name .headline-sm .des {
+  position: absolute;
+  top: 0;
+}
+.footer .group-footer .flex-wrap .name .headline-sm .becots {
+  position: absolute;
+  top: 0;
+  left: 60px;
+}
+.footer .group-footer .address {
+  padding: 15px 0;
+}
+
+/* 메인 */
+.sc-main {
+  position: relative;
+  height: 100vh;
+  background: #1E1915;
+}
+.sc-main .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  z-index: 1;
+}
+.sc-main .swiper {
+  height: 100%;
+}
+.sc-main .swiper .swiper-slide-active .row.row1 img {
+  transform: scale(1);
+}
+.sc-main .swiper .swiper-slide-active .row.row2 img {
+  transform: scale(1) translateY(-25%);
+}
+.sc-main .swiper .swiper-slide-active .row.row3 img {
+  transform: scale(1) translateY(-50%);
+}
+.sc-main .swiper .swiper-slide-active .row.row4 img {
+  transform: scale(1) translateY(-75%);
+}
+.sc-main .swiper .row {
+  position: relative;
+  overflow: hidden;
+  height: 25%;
+}
+.sc-main .swiper .row.row1 img {
+  transform: scale(1.2);
+}
+.sc-main .swiper .row.row2 img {
+  transform: scale(1.2) translateY(-25%);
+}
+.sc-main .swiper .row.row3 img {
+  transform: scale(1.2) translateY(-50%);
+}
+.sc-main .swiper .row.row4 img {
+  transform: scale(1.2) translateY(-75%);
+  transform-origin: bottom;
+}
+.sc-main .swiper .row img {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 1s;
+}
+.sc-main .group-row {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.sc-main .group-row .row {
+  position: relative;
+  height: 25vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #EEE9CC;
+}
+.sc-main .group-row .left {
+  text-align: left;
+}
+.sc-main .group-row .left p {
+  font-size: 25vh;
+  margin: 0 20px;
+  z-index: 101;
+}
+.sc-main .group-row .right {
+  justify-content: flex-end;
+}
+.sc-main .group-row .right p {
+  font-size: 25vh;
+  margin: 0 20px;
+  z-index: 101;
+}
+.sc-main .group-row .bg {
+  position: absolute;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  left: 0;
+  background-color: #1E1915;
+  z-index: 11;
+}
+
+/* 소개 */
+.sc-intro {
+  background-color: #1E1915;
+}
+.sc-intro .group-flex {
+  display: flex;
+  height: 12vw;
+  width: 100%;
+}
+.sc-intro .group-flex .col {
+  font-size: 8vw;
+  width: 25%;
+  border-right: 1px solid #EEE9CC;
+  overflow: hidden;
+  position: relative;
+}
+.sc-intro .group-flex .col p {
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+.sc-intro .group-flex .col .first {
+  left: -20%;
+}
+.sc-intro .group-flex .col .second {
+  left: -160%;
+}
+.sc-intro .group-flex .col .third {
+  left: -120%;
+}
+.sc-intro .group-flex .col .fourth {
+  left: -212%;
+}
+.sc-intro .group-expertise {
+  border-top: 1px solid #EEE9CC;
+  border-bottom: 1px solid #EEE9CC;
+  display: flex;
+  height: 100px;
+  font-size: 50px;
+  padding-left: 20px;
+  line-height: 100px;
+}
+.sc-intro .group-expertise strong {
+  width: 25%;
+}
+.sc-intro .group-expertise .swiper.verticalSwiper {
+  width: 75%;
+}
+.sc-intro .group-shape {
+  border-bottom: 1px solid #EEE9CC;
+  width: 100%;
+  height: 100%;
+}
+.sc-intro .group-shape .flex-wrap {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.sc-intro .group-shape .flex-wrap .col {
+  width: 25%;
+  height: 50vh;
+  border-right: 1px solid #EEE9CC;
+  padding: 10px;
+}
+.sc-intro .group-shape .flex-wrap .col .shape-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.sc-intro .group-shape .flex-wrap .col .shape-box .box {
+  width: 100%;
+  height: 30%;
+  background-color: #EEE9CC;
+}
+.sc-intro .group-shape .flex-wrap .col.second {
+  position: relative;
+}
+.sc-intro .group-shape .flex-wrap .col.second .shape-box {
+  position: absolute;
+  top: 33%;
+  left: 10px;
+  width: calc(100% - 20px);
+  height: calc(66.6666666667% - 10px);
+}
+.sc-intro .group-shape .flex-wrap .col.second .shape-box .box1 {
+  width: 50%;
+  height: 50%;
+  background-color: #EEE9CC;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.sc-intro .group-shape .flex-wrap .col.second .shape-box .box2 {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #EEE9CC;
+}
+.sc-intro .group-shape .flex-wrap .third .shape-box {
+  display: flex;
+}
+.sc-intro .group-shape .flex-wrap .third .shape-box > div {
+  flex: 1;
+  height: 100%;
+  position: relative;
+}
+.sc-intro .group-shape .flex-wrap .third .shape-box > div span {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 100%;
+  background: #EEE9CC;
+  border-radius: 50%;
+}
+.sc-intro .group-shape .flex-wrap .fourth .shape-box .rotatebox {
+  position: absolute;
+  top: 33.3333333333%;
+  width: 100%;
+  height: calc(33.3333333333% - 10px);
+  background-color: #EEE9CC;
+}
+.sc-intro .group-text {
+  height: 80vh;
+  border-bottom: 1px solid #EEE9CC;
+  position: relative;
+  display: flex;
+  font-size: 100px;
+  overflow: hidden;
+}
+.sc-intro .group-text .fix {
+  position: absolute;
+  top: 33%;
+  left: 20px;
+}
+.sc-intro .group-text .swiper.textSwiper {
+  top: 55%;
+  left: 20px;
+  margin-left: 0;
+}
+.sc-intro .group-text .swiper.textSwiper .swiper-slide span {
+  display: block;
+  line-height: 1;
+  width: 100%;
+}
+.sc-intro .group-text .flex-wrap {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.sc-intro .group-text .flex-wrap .col {
+  width: 25%;
+  border-right: 1px solid #EEE9CC;
+}
+.sc-intro .group-intro {
+  display: flex;
+  height: 50vh;
+  border-bottom: 1px solid #EEE9CC;
+}
+.sc-intro .group-intro .col {
+  padding: 20px;
+  flex: 1;
+}
+.sc-intro .group-intro .col .desc {
+  font-size: 20px;
+  line-height: 1;
+}
+.sc-intro .group-intro .col + .col {
+  border-left: 1px solid #EEE9CC;
+}
+
+/* 프로젝트 */
+.sc-project {
+  background: #674825;
+  position: relative;
+}
+.sc-project .project-intro {
+  position: relative;
+}
+.sc-project .project-intro .marquee-area {
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+.sc-project .project-intro .marquee-area .text {
+  font-weight: bold;
+  font-size: 20vw;
+}
+.sc-project .project-intro .flex-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.sc-project .project-intro .flex-wrap .col {
+  border-right: 1px solid #EEE9CC;
+  width: 25%;
+  background: #1E1915;
+  position: relative;
+}
+.sc-project .project-intro .flex-wrap .col .bg {
+  background: #674825;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.sc-project .project-description {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+.sc-project .project-description .project {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  padding: 20px;
+  width: 50%;
+}
+.sc-project .project-description .desc {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  padding: 20px;
+  width: 25%;
+}
+.sc-project .project-description .date {
+  position: absolute;
+  top: -60px;
+  left: 75%;
+  padding: 20px;
+  width: 25%;
+}
+.sc-project .project-list .project-item {
+  border-top: 1px solid #EEE9CC;
+}
+.sc-project .project-list .project-item .simple {
+  position: relative;
+  padding: 12px 0;
+  display: flex;
+  font-size: 26px;
+}
+.sc-project .project-list .project-item .simple > * {
+  position: relative;
+  z-index: 1;
+}
+.sc-project .project-list .project-item .simple .project-title {
+  padding-left: 20px;
+  width: 50%;
+}
+.sc-project .project-list .project-item .simple .project-desc {
+  padding-left: 20px;
+  width: 25%;
+}
+.sc-project .project-list .project-item .simple .project-date {
+  padding-left: 20px;
+  width: 25%;
+}
+.sc-project .project-list .project-item .simple .btn-more {
+  position: absolute;
+  right: 20px;
+  top: 0;
+}
+.sc-project .project-list .project-item .simple .btn-more svg {
+  width: 20px;
+  height: 60px;
+}
+.sc-project .project-list .project-item .simple .btn-more svg path {
+  fill: #1E1915;
+}
+.sc-project .project-list .project-item .simple:hover {
+  color: #1e1915;
+  transition: 1s;
+}
+.sc-project .project-list .project-item .simple::before {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: #EEE9CC;
+  width: 100%;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s 0.1s;
+  content: "";
+}
+.sc-project .project-list .project-item .detail {
+  display: none;
+}
+.sc-project .project-list .project-item .detail .slide-area {
+  width: 50%;
+  padding: 20px;
+}
+.sc-project .project-list .project-item .detail .slide-area .swiper.project .swiper-pagination {
+  text-align: right;
+  padding-right: 10px;
+  right: 10px;
+}
+.sc-project .project-list .project-item .detail .slide-area .swiper.project .swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #EEE9CC;
+  opacity: 1;
+}
+.sc-project .project-list .project-item .detail .slide-area .swiper.project .swiper-pagination .swiper-pagination-bullet-active {
+  background: #EEE9CC;
+}
+.sc-project .project-list .project-item .detail .desc {
+  padding: 20px;
+  width: 25%;
+  color: #EEE9CC;
+}
+.sc-project .project-list .project-item .detail.active {
+  display: flex;
+}
+
+.sc-project .project-list .project-item .simple:hover::before {
+  transform: scaleY(1);
+  transform-origin: top;
+}
