@@ -263,8 +263,8 @@ $(function(){
     const contactMove = gsap.timeline({
       scrollTrigger: {
         trigger: ".project-intro",
-        start: "20% 0%",
-        end:"70% 0%",
+        start: "20% 50%",
+        end:"50% 30%",
         scrub: 1,
         // markers: true,
       },
@@ -277,8 +277,8 @@ $(function(){
     const creditMove = gsap.timeline({
       scrollTrigger: {
         trigger: ".project-intro",
-        start: "20% 0%",
-        end:"70% 0%",
+        start: "20% 50%",
+        end:"50% 30%",
         scrub: 1,
         // markers: true,
       },
@@ -292,8 +292,8 @@ $(function(){
     const nameMove = gsap.timeline({
       scrollTrigger: {
         trigger: ".project-intro",
-        start: "20% 0%",
-        end:"70% 0%",
+        start: "20% 50%",
+        end:"50% 30%",
         scrub: 1,
         // markers: true,
       },
